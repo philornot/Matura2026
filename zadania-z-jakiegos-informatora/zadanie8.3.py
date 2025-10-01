@@ -12,8 +12,7 @@ def wczytaj_dane():
 ciag = wczytaj_dane()
 dlugosc_podciagu = 1
 maks_podciag = 0
-podciag = []
-l = 0
+
 for i in range(len(ciag) - 1):
     if ciag[i] < ciag[i + 1]:
         dlugosc_podciagu += 1
