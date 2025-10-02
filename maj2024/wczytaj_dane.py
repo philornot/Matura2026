@@ -12,14 +12,3 @@ def wczytaj_dane(przyklad=False):
     for j in wiersz2_raw:
         wiersz2.append(int(j))
     return wiersz1, wiersz2
-
-
-w1, w2 = wczytaj_dane(przyklad=False)
-licznik = 0
-for i in w1:
-    for j in w2:
-        if j % i == 0:
-            licznik += 1
-            break
-
-print(licznik)
