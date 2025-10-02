@@ -38,7 +38,7 @@ def policz_wystapienia(lista):
     return slownik
 
 
-w1, w2 = wczytaj_dane(przyklad=True)
+w1, w2 = wczytaj_dane(przyklad=False)
 w1_counter = policz_wystapienia(w1)
 iloczyny = []
 
