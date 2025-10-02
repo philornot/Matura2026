@@ -5,7 +5,10 @@ def zapisz_dane(odp1='', odp2='', odp3='', odp4=''):
                 f'Zadanie 4.3: {odp3}\n'
                 f'Zadanie 4.4: {odp4}')
 
+
 from zadanie4_1 import odpowiedz1
 from zadanie4_2 import odpowiedz2
 from zadanie4_3 import odpowiedz3
-zapisz_dane(odpowiedz1, odpowiedz2, odpowiedz3)
+from zadanie4_4 import odpowiedz4
+
+zapisz_dane(odpowiedz1, odpowiedz2, odpowiedz3, odpowiedz4)
