@@ -1,6 +1,6 @@
-from symulacja import symulacja, wczytaj_dane
+from symulacja import symulacja, wczytaj_odbiorcy
 
-odbiorcy = wczytaj_dane(przyklad=False)
+odbiorcy = wczytaj_odbiorcy(przyklad=False)
 n = len(odbiorcy)
 
 komputery = {}
@@ -15,3 +15,5 @@ for komputer, pakiety in komputery_po1.items():
         licznik += 1
 
 print(licznik)
+with open('odp4_2.txt', 'w') as plik:
+    plik.write(str(licznik))

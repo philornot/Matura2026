@@ -1,4 +1,4 @@
-def wczytaj_dane(przyklad=False):
+def wczytaj_odbiorcy(przyklad=False):
     if przyklad:
         plik = 'odbiorcy_przyklad.txt'
     else:
@@ -29,3 +29,10 @@ def symulacja(komputery_startowe, n, odbiorcy, liczba_rund=None):
 
     return komputery_aktualny_stan
 
+def pelna_symulacja(komputery, n, odbiorcy):
+    rundy = []
+    for numer_rundy in range(1, n + 1):
+        # print(f'Symulacja dla rundy {numer_rundy}')
+        runda = symulacja(komputery, n, odbiorcy, liczba_rund=numer_rundy)
+        rundy.append(runda)
+    return rundy

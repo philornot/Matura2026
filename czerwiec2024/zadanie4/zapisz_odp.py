@@ -1,13 +1,23 @@
-from zad4_2 import licznik as odp4_2
+def zapisz_odp():
+    plik_wynikowy = 'wyniki4.txt'
 
-def zapisz_odp(*odpowiedzi):
-    plik = 'wyniki4.txt'
-    odpowiedz_koncowa = ''
-    numer_zadania = 1
-    for odpowiedz in odpowiedzi:
-        odpowiedz_koncowa += f'Zadanie {numer_zadania}: {odpowiedz}\n'
-        numer_zadania += 1
-    with open(plik, 'w') as f:
+    with open('odp4_2.txt', 'r') as plik:
+        odp4_2 = plik.read().strip()
+
+    with open('odp4_3.txt', 'r') as plik:
+        odp4_3 = plik.read().strip()
+
+    with open('odp4_4.txt', 'r') as plik:
+        odp4_4 = plik.read().strip()
+
+    odpowiedz_koncowa = (
+        f'Zadanie 4.2: {odp4_2}\n'
+        f'Zadanie 4.3: {odp4_3}\n'
+        f'Zadanie 4.4: {odp4_4}\n'
+    )
+
+    with open(plik_wynikowy, 'w') as f:
         f.write(odpowiedz_koncowa)
 
-zapisz_odp(odp4_2)
+
+zapisz_odp()
