@@ -1,6 +1,3 @@
-from cmath import inf
-
-
 def wczytaj_pi(przyklad=False):
     if przyklad:
         plik = 'pi_przyklad.txt'
@@ -39,7 +36,7 @@ for moz_d in mozliwe_dwucyfr:
 # print(wystepowania)
 maks = 0
 maks_dwucyfr = ''
-min = float(inf)
+min = 9999999999
 min_dwucyfr = ''
 
 for d, wyst in wystepowania.items():
