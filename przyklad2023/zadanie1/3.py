@@ -33,64 +33,81 @@ def wczytaj_plansze(przyklad=False):
 #     for wiersz in plansza:
 #         print(wiersz)
 #     print()
-def czy_biala_wieza_szachuje_czarnego_krola(plansza, numer=0):
+def czy_biala_wieza_szachuje_czarnego_krola(plansza):
     szach = False
     for i in range(8):
         for j in range(8):
             pole = plansza[i][j]
             if pole == 'k':
-                for w in range(j, -1):
-                    if plansza[i][w] not in ['.', 'k', 'W']:
+                for w in range(j + 1, 8):
+                    if plansza[i][w] == 'W':
+                        szach = True
+                        break
+                    if plansza[i][w] != '.':
                         break  # nie szachuje w wierszu po prawej
-                    szach = True
 
-                for w in range(-1, j - 1):
-                    if plansza[i][w] not in ['.', 'k', 'W']:
+                for w in range(j - 1, -1, -1):
+                    if plansza[i][w] == 'W':
+                        szach = True
+                        break
+                    if plansza[i][w] != '.':
                         break  # nie szachuje w wierszu po lewej
-                    szach = True
 
-                for k in range(i, -1):
-                    if plansza[k][j] not in ['.', 'k', 'W']:
+                for k in range(i + 1, 8):
+                    if plansza[k][j] == 'W':
+                        szach = True
+                        break
+                    if plansza[k][j] != '.':
                         break  # nie szachuje w kolumnie od góry
-                    szach = True
 
-                for k in range(-1, i - 1):
-                    if plansza[k][j] not in ['.', 'k', '1W']:
+                for k in range(i - 1, -1, -1):
+                    if plansza[k][j] == 'W':
+                        szach = True
+                        break
+                    if plansza[k][j] != '.':
                         break  # nie szachuje w kolumnie od dołu
-                    szach = True
 
     return szach
 
 
-def czy_czarna_wieza_szachuje_bialego_krola(plansza, numer=0):
+def czy_czarna_wieza_szachuje_bialego_krola(plansza):
     szach = False
     for i in range(8):
         for j in range(8):
             pole = plansza[i][j]
             if pole == 'K':
 
-                for w in range(j, -1):
-                    if plansza[i][w] not in ['.', 'K', 'w']:
+                for w in range(j + 1, 8):
+                    if plansza[i][w] == 'w':
+                        szach = True
+                        break
+                    if plansza[i][w] != '.':
                         break  # nie szachuje w wierszu po prawej
-                    szach = True
-                for w in range(-1, j - 1):
-                    if plansza[i][w] not in ['.', 'K', 'w']:
+
+                for w in range(j - 1, -1, -1):
+                    if plansza[i][w] == 'w':
+                        szach = True
+                        break
+                    if plansza[i][w] != '.':
                         break  # nie szachuje w wierszu po lewej
-                    szach = True
 
-                for k in range(i, -1):
-                    if plansza[k][j] not in ['.', 'K', 'w']:
+                for k in range(i + 1, 8):
+                    if plansza[k][j] == 'w':
+                        szach = True
+                        break
+                    if plansza[k][j] != '.':
                         break  # nie szachuje w kolumnie od góry
-                    szach = True
 
-                for k in range(-1, i - 1):
-                    if plansza[k][j] not in ['.', 'K', 'w']:
+                for k in range(i - 1, -1, -1):
+                    if plansza[k][j] == 'w':
+                        szach = True
+                        break
+                    if plansza[k][j] != '.':
                         break  # nie szachuje w kolumnie od dołu
-                    szach = True
     return szach
 
 
-plansze, liczba_planszy = wczytaj_plansze(przyklad=True)
+plansze, liczba_planszy = wczytaj_plansze(przyklad=False)
 
 numer_planszy = 0
 biala_szach = czarna_szach = 0
@@ -99,13 +116,13 @@ for plansza in plansze:
     if numer_planszy > liczba_planszy:
         break
 
-    if czy_biala_wieza_szachuje_czarnego_krola(plansza, numer=numer_planszy):
+    if czy_biala_wieza_szachuje_czarnego_krola(plansza):
         biala_szach += 1
         print('\nBiała wieża szachuje czarnego króla:')
         for wiersz in plansza:
             print(wiersz)
         print()
-    if czy_czarna_wieza_szachuje_bialego_krola(plansza, numer=numer_planszy):
+    if czy_czarna_wieza_szachuje_bialego_krola(plansza):
         czarna_szach += 1
         print('\nCzarna wieża szachuje białego króla')
         for wiersz in plansza:
