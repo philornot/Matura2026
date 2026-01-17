@@ -1,8 +1,8 @@
 def wczytaj_odbiorcy(przyklad=False):
     if przyklad:
-        plik = 'odbiorcy_przyklad.txt'
+        plik = '../dane/odbiorcy_przyklad.txt'
     else:
-        plik = 'odbiorcy.txt'
+        plik = '../dane/odbiorcy.txt'
     with open(plik, 'r') as f:
         linie = f.read()
     return linie.split()
