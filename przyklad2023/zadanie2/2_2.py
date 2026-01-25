@@ -12,11 +12,24 @@ def rozgrywka(A, s):
     for k in range(1, n + 1):
         B = tura(k, A, s, B)
 
-    return B[s]
+    return B
 
 
-# Zadanie 2.1
-print(rozgrywka([1, 2, 3], 5))
-print(rozgrywka([1, 2, 5, 10], 14))
-print(rozgrywka([13, 5, 5, 2, 7], 17))
-print(rozgrywka([7, 6, 5, 4, 3, 2, 1], 25))
+A = []
+for i in range(0, 501, 5):
+    A.append(i)
+
+s = 500
+
+B = []
+for i in range(s + 1):
+    B.append(i)
+
+B = rozgrywka(A, s)
+
+licznik = 0
+for pole in B:
+    if pole:
+        licznik += 1
+
+print(licznik)
