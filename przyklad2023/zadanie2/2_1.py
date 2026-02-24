@@ -1,7 +1,8 @@
 def tura(k, A, s, B):
     for i in range(s, A[k - 1] - 1, -1):
-        if B[i - A[k - 1]] and not B[i]:
-            B[i] = True
+        if B[i - A[k - 1]]:
+            if not B[i]:
+                B[i] = True
 
     return B
 
@@ -12,7 +13,10 @@ def rozgrywka(A, s):
     for k in range(1, n + 1):
         B = tura(k, A, s, B)
 
-    return B[s]
+    if B[s]:
+        return "TAK"
+    else:
+        return "NIE"
 
 
 print(rozgrywka([1, 2, 3], 5))
