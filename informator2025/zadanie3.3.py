@@ -19,7 +19,7 @@ def oblicz_dlugosc_przedzialu(a, b):
     return b - a + 1
 
 
-def klucz(przedzial):
+def klucz_dlugosc_przedzialu(przedzial):
     a, b = przedzial
     return oblicz_dlugosc_przedzialu(a, b)
 
@@ -37,7 +37,7 @@ F = (7, 9)
 
 dane = wczytaj_dane()
 # dane = [A, B, C, D, E, F]
-dane.sort(key=klucz)
+dane.sort(key=klucz_dlugosc_przedzialu)
 n = len(dane)
 lancuch = [dane[0]]
 
