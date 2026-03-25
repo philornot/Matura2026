@@ -1,3 +1,10 @@
+# POLECENIE:
+# Oblicz długość najdłuższego łańcucha przedziałów, który można utworzyć z przedziałów zapisanych w pliku dane3.txt.
+#
+# Wskazówka: Dla każdego przedziału można obliczyć długość najdłuższego łańcucha,
+# którego ten przedział jest początkiem, w kolejności od przedziałów najkrótszych do
+# przedziałów najdłuższych.
+
 def wczytaj_dane():
     with open('dane3.txt') as plik:
         dane_raw = plik.read().strip().split('\n')
@@ -37,7 +44,9 @@ F = (7, 9)
 
 dane = wczytaj_dane()
 # dane = [A, B, C, D, E, F]
+print(f'Oryginalne dane: {dane}')
 dane.sort(key=klucz_dlugosc_przedzialu)
+print(f'posortowane: {dane}',end='\n\n')
 n = len(dane)
 lancuch = [dane[0]]
 
@@ -45,6 +54,9 @@ for i in range(n-1):
     nastepny_przedzial = dane[i+1]
     ostatni_z_lancucha = lancuch[-1]
     if czy_zawiera(nastepny_przedzial, ostatni_z_lancucha):
+        print(f'[X] przedział {nastepny_przedzial} zawiera w sobie {ostatni_z_lancucha}')
         lancuch.append(nastepny_przedzial)
-
+    else:
+        print(f'[ ] przedział {nastepny_przedzial} NIE zawiera w sobie {ostatni_z_lancucha}')
+print()
 print(len(lancuch))
