@@ -46,17 +46,18 @@ dane = wczytaj_dane()
 # dane = [A, B, C, D, E, F]
 print(f'Oryginalne dane: {dane}')
 dane.sort(key=klucz_dlugosc_przedzialu)
-print(f'posortowane: {dane}',end='\n\n')
+print(f'posortowane: {dane}', end='\n\n')
 n = len(dane)
 lancuch = [dane[0]]
 
-for i in range(n-1):
-    nastepny_przedzial = dane[i+1]
+for i in range(n - 1):
+    nastepny_przedzial = dane[i + 1]
     ostatni_z_lancucha = lancuch[-1]
     if czy_zawiera(nastepny_przedzial, ostatni_z_lancucha):
-        print(f'[X] przedział {nastepny_przedzial} zawiera w sobie {ostatni_z_lancucha}')
+        print(f'[X] {nastepny_przedzial} zawiera w sobie {ostatni_z_lancucha}')
         lancuch.append(nastepny_przedzial)
     else:
-        print(f'[ ] przedział {nastepny_przedzial} NIE zawiera w sobie {ostatni_z_lancucha}')
+        print(f'[ ] {nastepny_przedzial} NIE zawiera w sobie {ostatni_z_lancucha}')
 print()
 print(len(lancuch))
+print(lancuch)
