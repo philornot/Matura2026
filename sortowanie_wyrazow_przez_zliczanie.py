@@ -1,8 +1,6 @@
-# print(ord('a'))
-# print(chr(97))
-
 def zamien_wyraz_na_liste_ord(wyraz):
     return [ord(litera) for litera in wyraz]
+
 
 def zamien_liste_ord_na_wyraz(lista_ord):
     wyraz = ''
@@ -10,13 +8,14 @@ def zamien_liste_ord_na_wyraz(lista_ord):
         wyraz += chr(litera)
     return wyraz
 
+
 napis = 'asvbjkducgslsljdihcksjdvbskjgc'
 
 napis_ord = zamien_wyraz_na_liste_ord(napis)
 maks = max(napis_ord)
-posortowana_ord =[]
+posortowana_ord = []
 
-wystapienia = [0] * (maks +1)
+wystapienia = [0] * (maks + 1)
 
 for litera_ord in napis_ord:
     wystapienia[litera_ord] += 1
