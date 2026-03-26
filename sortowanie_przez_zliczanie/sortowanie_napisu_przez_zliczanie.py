@@ -9,7 +9,8 @@ def zamien_liste_ord_na_wyraz(lista_ord):
     return wyraz
 
 
-napis = 'asvbjkducgslsljdihcksjdvbskjgc'
+with open('jedenNapis.txt') as plik:
+    napis = plik.read()
 
 napis_ord = zamien_wyraz_na_liste_ord(napis)
 maks = max(napis_ord)
