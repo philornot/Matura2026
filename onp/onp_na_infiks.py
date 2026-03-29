@@ -14,9 +14,9 @@ def czy_liczba(znak):
 
 
 for wyrazenie in dane:
+    print(f'\n\nWyrażenie: {wyrazenie}')
     stos = []
     wyrazenie = wyrazenie.split()
-    print(f'\n\nWyrażenie: {wyrazenie}')
     n = len(wyrazenie)
     for i in range(n):
         znak = wyrazenie[i]
