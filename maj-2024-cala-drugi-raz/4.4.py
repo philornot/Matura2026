@@ -31,4 +31,4 @@ for i in range(len(liczby)):
         maks_okno = okno
 
 print(maks_srednia, maks_liczba_el, maks_pierwszy_el, sep=' ')
-print(maks_okno)
+# print(maks_okno)
