@@ -12,7 +12,7 @@ def wczytaj_dane(przyklad=False):
         return dane
 
 
-dane = wczytaj_dane(przyklad=True)
+dane = wczytaj_dane(przyklad=False)
 # for linia in dane:
 #     print(linia)
 liczby = dane[0]
@@ -20,9 +20,10 @@ maks_srednia = 0
 maks_liczba_el = 0
 maks_pierwszy_el = 0
 maks_okno = []
-for i in range(len(liczby) - 50):
-    okno = liczby[i:i + 50]
+for i in range(len(liczby)):
+    okno = liczby[i:(i + 50)]
     srednia_arytmetyczna = sum(okno) / 50
+    # print(srednia_arytmetyczna)
     if srednia_arytmetyczna > maks_srednia:
         maks_srednia = srednia_arytmetyczna
         maks_liczba_el = len(okno)
